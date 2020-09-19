@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Consent</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>hello</h3>
+        <div class="client-logo">
+            <div class="logo-container">
+                <svg aria-hidden="true" class="logo">
+                    <use xlink:href="#icon-guard"></use>
+                </svg>
+            </div>
+            <div class="connection">
+                <span class="line"></span>
+                <svg aria-hidden="true" class="tick">
+                    <use xlink:href="#icon-success"></use>
+                </svg>
+                <span class="line"></span>
+            </div>
+            <div class="logo-container">
+                <svg aria-hidden="true" class="logo">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            </div>
+        </div>
+        <div class="request-info">
+            <div class="client-name">AuthServer_Web</div>
+            <div>wants to access your account: <span class="username">taujiong</span></div>
+            <div class="long-message">The following permissions are requested by the app <br>
+                Uncheck the permissions you do not want to grant</div>
+        </div>
+        <div class="container-form">
+            <form method="post" action="/Consent">
+                <div class="scope">
+                    <div class="scope-head">
+                        <svg aria-hidden="true" class="img">
+                            <use xlink:href="#icon-person"></use>
+                        </svg>
+                        <h3>Personal Information</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <label>
+                                <input type="checkbox" checked disabled />
+                                Your user identifier
+                                <span style="color: red;">
+                                    *
+                                </span>
+                            </label>
+                        </li>
+                        <li class="list-group-item">
+                            <label>
+                                <input type="checkbox" />
+                                User profile
+                            </label>
+                        </li>
+                        <li class="list-group-item">
+                            <label>
+                                <input class="form-check-input" type="checkbox" />
+                                Roles of the user
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="scope-head">
+                        <svg aria-hidden="true" class="img">
+                            <use xlink:href="#icon-app"></use>
+                        </svg>
+                        <h3>Application Access</h3>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <label>
+                                <input class="form-check-input" type="checkbox" />
+                                AuthServer API
+                            </label>
+                        </li>
+                        <li class="list-group-item">
+                            <label>
+                                <input class="form-check-input" type="checkbox" />
+                                Offline Access
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <label class="remember">
+                    <input type="checkbox" />
+                    <strong>Remember My Decision</strong>
+                </label>
+                <div class="btn-group">
+                    <button autofocus class="btn btn-primary" name="UserDecision" value="yes">
+                        Yes, Allow
+                    </button>
+                    <button class="btn" name="UserDecision" value="no">
+                        No, Do Not Allow
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="//at.alicdn.com/t/font_1966347_hs6t4e5x23v.js"></script>
+
+</html>

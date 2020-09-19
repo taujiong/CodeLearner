@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+
+message Employee {
+	int32 id = 1;
+	string name = 2;
+	float salary = 3;
+}
+
+message GetByIdRequest {
+	int32 id = 1;
+}
+
+service EmployeeService {
+	rpc GetById (GetByIdRequest) returns (Employee);
+}
