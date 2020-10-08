@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="./site.css">
+</head>
+
+<body>
+<section class="hero is-fullheight">
+    <div class="hero-body">
+        <div class="container is-fullhd">
+            <div class="columns is-centered">
+                <div class="column is-5-tablet is-5-desktop is-4-widescreen">
+                    <div class="box">
+                        <form class="login-form" method="post">
+                            <span class="login-form-title p-b-49">Login</span>
+
+                            <input type="hidden" id="ReturnUrl" name="ReturnUrl" value="">
+                            <input type="hidden" id="ReturnUrlHash" name="ReturnUrlHash" value="">
+
+                            <div class="m-b-23 wrap-input">
+                                <svg aria-hidden="true" class="icon">
+                                    <use xlink:href="#icon-user"></use>
+                                </svg>
+                                <input autocomplete="on" class="inputs"
+                                       placeholder="Username or email address"
+                                       required="" type="text" data-val="true"
+                                       data-val-length="The field UserNameOrEmailAddress must be a string with a maximum length of 256."
+                                       data-val-length-max="256"
+                                       data-val-required="The UserNameOrEmailAddress field is required."
+                                       id="LoginInput_UserNameOrEmailAddress" maxlength="256"
+                                       name="LoginInput.UserNameOrEmailAddress" value="">
+                                <span class="focus-input"></span>
+                            </div>
+
+                            <div class="m-b-23 wrap-input">
+                                <svg aria-hidden="true" class="icon">
+                                    <use xlink:href="#icon-lock"></use>
+                                </svg>
+                                <input class="inputs" placeholder="Password" required=""
+                                       type="password"
+                                       data-val="true"
+                                       data-val-length="The field Password must be a string with a maximum length of 128."
+                                       data-val-length-max="128"
+                                       data-val-required="The Password field is required."
+                                       id="LoginInput_Password" maxlength="128"
+                                       name="LoginInput.Password">
+                                <span class="focus-input"></span>
+                            </div>
+
+                            <div class="wrap-checkbox">
+                                <label class="remember-label" for="remember-input">
+                                    <input id="remember-input" type="checkbox" data-val="true"
+                                           data-val-required="The RememberMe field is required."
+                                           name="LoginInput.RememberMe" value="true">
+                                    <span>Remember me</span>
+                                </label>
+
+                                <a href="javascript:">Forgot your password?</a>
+                            </div>
+
+                            <div class="container-login-form-btn">
+                                <div class="wrap-login-form-btn">
+                                    <div class="login-form-bgbtn"></div>
+                                    <button class="login-form-btn" type="submit">
+                                        Login
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="external p-b-20 p-t-50 text-center">
+                                <span>External Login</span>
+                            </div>
+                            <div class="flex-c-m">
+                                <a class="login-social-item"
+                                   href="/Account/Login?provider=GitHub&amp;handler=ExternalLogin">
+                                    <svg aria-hidden="true" class="icon">
+                                        <use xlink:href="#icon-github"></use>
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <div class="flex-col-c p-t-25">
+                                <a class="local" href="/Account/Register">
+                                    Register
+                                </a>
+                                <a class="local" href="/Account/Login?handler=Cancel">
+                                    Cancel
+                                </a>
+                            </div>
+                            <input name="__RequestVerificationToken" type="hidden"
+                                   value="CfDJ8AN_d8qLx3BPjUFjtGQY6tAS-KE9tihIZJZOkAWDncwDSJwPGO7pamSwr9H545UJ5V7R7WMQ0DYjwYIafuWBE6-qz9sU-W2VdoIQpJLGuu_qnjEezo-zXpeviZK5dfWhZvyajaI_vCbNm5bSNv3UbQ-ASKaLfhsw_9QAQLIVxJ8jNGPPpZ_Fnwxr8TgeEuNmSA"><input
+                                name="LoginInput.RememberMe" type="hidden" value="false"></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="//at.alicdn.com/t/font_1966347_35sn4jfcfav.js"></script>
+
+
+</body>
+</html>
