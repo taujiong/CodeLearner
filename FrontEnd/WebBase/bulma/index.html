@@ -10,11 +10,23 @@
 </head>
 
 <body>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container">
-                <div class="columns is-centered">
-                    <div class="column is-full-mobile is-5-tablet is-4-desktop is-3-widescreen">
+                <div class="columns is-centered is-flex-mobile">
+                    <div class="column" style="max-width: 410px;">
                         <form class="box" method="post">
                             <div class="is-size-1 has-text-centered mb-3">Login</div>
 
@@ -57,10 +69,10 @@
                                 </label>
                             </div>
 
-                            <div class="pt-4 mb-4 container-login-form-btn">
-                                <div class="wrap-login-form-btn">
-                                    <div class="login-form-bgbtn"></div>
-                                    <button class="login-form-btn" type="submit">
+                            <div class="pt-4 mb-4">
+                                <div class="wrap-form-btn">
+                                    <div class="form-btn-bg"></div>
+                                    <button class="form-btn" type="submit">
                                         Login
                                     </button>
                                 </div>
@@ -70,13 +82,13 @@
                                 <span>External Login</span>
                             </div>
                             <div class="columns is-centered is-mobile">
-                                <a class="mx-2 login-social-item"
+                                <a class="mx-1 login-social-item"
                                     href="/Account/Login?provider=GitHub&amp;handler=ExternalLogin">
                                     <svg aria-hidden="true" class="icon">
                                         <use xlink:href="#icon-github"></use>
                                     </svg>
                                 </a>
-                                <a class="mx-2 login-social-item"
+                                <a class="mx-1 login-social-item"
                                     href="/Account/Login?provider=GitHub&amp;handler=ExternalLogin">
                                     <svg aria-hidden="true" class="icon">
                                         <use xlink:href="#icon-github"></use>
@@ -85,9 +97,9 @@
                             </div>
 
                             <div class="has-text-centered">
-                                <a class="is-size-6 mx-2" href="/Account/Register">Register</a>
-                                <a href="javascript:">Forget</a>
-                                <a class="is-size-6 mx-2" href="/Account/Login?handler=Cancel">Cancel</a>
+                                <a class="is-size-6 mx-1" href="/Account/Register">Register</a>
+                                <a class="is-size-6 mx-1" href="javascript:">Forget</a>
+                                <a class="is-size-6 mx-1" href="/Account/Login?handler=Cancel">Cancel</a>
                             </div>
                         </form>
                     </div>
