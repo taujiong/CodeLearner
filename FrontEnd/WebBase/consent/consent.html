@@ -7,105 +7,114 @@
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>Consent</title>
-    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="consent.css">
 </head>
 
 <body>
-    <div class="container">
-        <h3>hello</h3>
-        <div class="client-logo">
-            <div class="logo-container">
-                <svg aria-hidden="true" class="logo">
-                    <use xlink:href="#icon-guard"></use>
-                </svg>
-            </div>
-            <div class="connection">
-                <span class="line"></span>
-                <svg aria-hidden="true" class="tick">
-                    <use xlink:href="#icon-success"></use>
-                </svg>
-                <span class="line"></span>
-            </div>
-            <div class="logo-container">
-                <svg aria-hidden="true" class="logo">
-                    <use xlink:href="#icon-github"></use>
-                </svg>
-            </div>
-        </div>
-        <div class="request-info">
-            <div class="client-name">AuthServer_Web</div>
-            <div>wants to access your account: <span class="username">taujiong</span></div>
-            <div class="long-message">The following permissions are requested by the app <br>
-                Uncheck the permissions you do not want to grant</div>
-        </div>
-        <div class="container-form">
-            <form method="post" action="/Consent">
-                <div class="scope">
-                    <div class="scope-head">
-                        <svg aria-hidden="true" class="img">
-                            <use xlink:href="#icon-person"></use>
-                        </svg>
-                        <h3>Personal Information</h3>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <label>
-                                <input type="checkbox" checked disabled />
-                                Your user identifier
-                                <span style="color: red;">
-                                    *
-                                </span>
-                            </label>
-                        </li>
-                        <li class="list-group-item">
-                            <label>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered is-flex-mobile">
+                    <div class="column" style="max-width: 410px;">
+                        <div class="level is-mobile">
+                            <div class="level-left logo-client-wrapper">
+                                <svg aria-hidden="true" class="logo-client">
+                                    <use xlink:href="#icon-guard"></use>
+                                </svg>
+                            </div>
+                            <div class="connection">
+                                <svg aria-hidden="true" class="icon-tick">
+                                    <use xlink:href="#icon-success"></use>
+                                </svg>
+                            </div>
+                            <div class="level-right logo-client-wrapper">
+                                <svg aria-hidden="true" class="logo-client">
+                                    <use xlink:href="#icon-github"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="has-text-centered mb-3">
+                            <div class="is-size-4 has-text-dark has-text-weight-medium">AuthServer_Web</div>
+                            <div class="has-text-grey">wants to access your account: <span
+                                    class="has-text-weight-medium">taujiong</span>
+                            </div>
+                        </div>
+                        <form class="container" method="post" action="/Consent">
+                            <div class="box is-radiusless mb-3 px-0 py-0">
+                                <div class="level is-mobile has-background-grey-lighter mb-2 px-2">
+                                    <div class="level-left"><svg aria-hidden="true" class="icon is-small mr-2">
+                                            <use xlink:href="#icon-person"></use>
+                                        </svg>
+                                        <h3>Personal Information</h3>
+                                    </div>
+                                </div>
+                                <ul class="mx-2 mb-2">
+                                    <li class="mt-2">
+                                        <label class="level-left">
+                                            <input type="checkbox" checked disabled />
+                                            Your user identifier
+                                            <span style="color: red;">
+                                                *
+                                            </span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="level-left">
+                                            <input type="checkbox" />
+                                            User profile
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="level-left">
+                                            <input type="checkbox" />
+                                            Roles of the user
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="level is-mobile has-background-grey-lighter mb-2 px-2">
+                                    <div class="level-left">
+                                        <svg aria-hidden="true" class="icon is-small mr-2">
+                                            <use xlink:href="#icon-app"></use>
+                                        </svg>
+                                        <h3>Application Access</h3>
+                                    </div>
+                                </div>
+                                <ul class="mx-2 pb-2">
+                                    <li>
+                                        <label class="level-left">
+                                            <input type="checkbox" />
+                                            AuthServer API
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="level-left">
+                                            <input type="checkbox" />
+                                            Offline Access
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <label class="level-left ml-2">
                                 <input type="checkbox" />
-                                User profile
+                                <strong>Remember My Decision</strong>
                             </label>
-                        </li>
-                        <li class="list-group-item">
-                            <label>
-                                <input class="form-check-input" type="checkbox" />
-                                Roles of the user
-                            </label>
-                        </li>
-                    </ul>
-                    <div class="scope-head">
-                        <svg aria-hidden="true" class="img">
-                            <use xlink:href="#icon-app"></use>
-                        </svg>
-                        <h3>Application Access</h3>
+                            <div class="buttons mt-5">
+                                <div style="margin: 0 auto;">
+                                    <button class="button is-primary" name="UserDecision" value="yes">
+                                        Yes, Allow
+                                    </button>
+                                    <button class="button" name="UserDecision" value="no">
+                                        No, Refuse
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <label>
-                                <input class="form-check-input" type="checkbox" />
-                                AuthServer API
-                            </label>
-                        </li>
-                        <li class="list-group-item">
-                            <label>
-                                <input class="form-check-input" type="checkbox" />
-                                Offline Access
-                            </label>
-                        </li>
-                    </ul>
                 </div>
-                <label class="remember">
-                    <input type="checkbox" />
-                    <strong>Remember My Decision</strong>
-                </label>
-                <div class="btn-group">
-                    <button autofocus class="btn btn-primary" name="UserDecision" value="yes">
-                        Yes, Allow
-                    </button>
-                    <button class="btn" name="UserDecision" value="no">
-                        No, Do Not Allow
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 <script src="//at.alicdn.com/t/font_1966347_hs6t4e5x23v.js"></script>
 

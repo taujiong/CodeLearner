@@ -1,175 +1,50 @@
-.container {
-  max-width: fit-content;
+.logo-client-wrapper {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  position: relative;
+
+  .logo-client {
+    width: 4em;
+    height: 4em;
+    fill: currentColor;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.connection {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  margin: 100px auto;
+  flex: 1;
 
-  .client-logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    .logo-container {
-      height: 8em;
-      width: 8em;
-      border-radius: 50%;
-      background-color: #f6f6f6;
-      position: relative;
-
-      .logo {
-        width: 4em;
-        height: 4em;
-        fill: currentColor;
-        overflow: hidden;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    .connection {
-      display: flex;
-      align-items: center;
-
-      .line {
-        width: 60px;
-        border-top: 2px dashed #aaa9a9;
-        margin: 0 8px;
-      }
-
-      .tick {
-        width: 2em;
-        height: 2em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
-      }
-    }
+  .icon-tick {
+    width: 2rem;
+    height: 2rem;
+    vertical-align: -0.15em;
+    fill: currentColor;
   }
 
-  .request-info {
-    text-align: center;
-    margin: 40px 0 20px;
-
-    div {
-      color: gray;
-      margin: 10px 0;
-      line-height: 1.5em;
-    }
-
-    .client-name {
-      font-size: 24px;
-      font-weight: bolder;
-      color: black;
-    }
-
-    .username {
-      font-weight: bolder;
-    }
-
-    .long-message {
-      font-size: 18px;
-    }
-  }
-
-  .container-form {
-    align-self: start;
-    width: 100%;
-
-    .scope {
-      border: 1px solid rgb(209, 209, 209);
-      border-radius: 5px;
-      margin: 0 0 20px;
-
-      .scope-head {
-        display: flex;
-        background-color: #eee;
-        align-items: center;
-        padding: 0 15px;
-
-        .img {
-          width: 1em;
-          height: 1em;
-          fill: currentColor;
-          overflow: hidden;
-        }
-
-        h3 {
-          line-height: 2em;
-          padding: 0 10px;
-          margin: 0;
-        }
-      }
-
-      .list-group {
-        list-style: none;
-        margin: 6px 0;
-        padding: 0 10px;
-
-        .list-group-item {
-          margin-bottom: 6px;
-
-          label {
-            display: inline-flex;
-            align-items: center;
-          }
-        }
-      }
-    }
-
-    .remember {
-      width: 100%;
-      display: inline-flex;
-      align-items: center;
-
-      input::before {
-        content: "";
-        display: block;
-        border-top: 1px solid gray;
-      }
-    }
-
-    .btn-group {
-      margin: 20px 0;
-      display: flex;
-
-      .btn {
-        width: fit-content;
-        height: 40px;
-        margin: 0 20px 0 0;
-        padding: 5px 10px;
-        font-size: 16px;
-        border: none;
-
-        &:hover {
-          transition: all 150ms linear;
-          opacity: .85;
-        }
-
-        &:active {
-          transition: all 150ms linear;
-          opacity: .75;
-        }
-
-        &:focus {
-          outline: 1px dotted #959595;
-          outline-offset: -4px;
-        }
-      }
-
-      .btn-primary {
-        color: white;
-        background-color: #416dea;
-      }
-    }
+  &:before,
+  &:after {
+    content: '';
+    flex: 1;
+    border-top: 2px dashed #aaa9a9;
+    margin: 0 0.5rem;
   }
 }
 
 input[type="checkbox"] {
-  height: 16px;
-  width: 16px;
-  margin-right: 12px;
+  height: 1rem;
+  width: 1rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+label {
+  vertical-align: middle;
 }
