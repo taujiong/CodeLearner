@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3Space.GrpcDemo.Client", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "J3Space.GrpcDemo.Server", "Grpc\J3Space.GrpcDemo.Server\J3Space.GrpcDemo.Server.csproj", "{C3015FBC-E7E4-45FE-93BB-23E9CC71C04C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Shared", "IdentityServer\Data.Shared\Data.Shared.csproj", "{5382D0A6-2DD0-4993-BB28-3B52D039D271}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,7 @@ Global
 		{9AFE5DDF-6747-4E56-B0EE-5F944BED290C} = {0E2AC5E4-09CE-4EFC-8B77-F8670B8BB689}
 		{60E47DEA-FA65-4CAF-AC48-53FC1DE35014} = {4A754BD9-E39D-4D45-9954-38625FEE89D6}
 		{C3015FBC-E7E4-45FE-93BB-23E9CC71C04C} = {4A754BD9-E39D-4D45-9954-38625FEE89D6}
+		{5382D0A6-2DD0-4993-BB28-3B52D039D271} = {5751219F-5800-4065-9340-635C0798FB32}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E36804CE-4460-4FD1-9E2E-FD4BCC60A7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -88,5 +91,9 @@ Global
 		{C3015FBC-E7E4-45FE-93BB-23E9CC71C04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3015FBC-E7E4-45FE-93BB-23E9CC71C04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3015FBC-E7E4-45FE-93BB-23E9CC71C04C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5382D0A6-2DD0-4993-BB28-3B52D039D271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5382D0A6-2DD0-4993-BB28-3B52D039D271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5382D0A6-2DD0-4993-BB28-3B52D039D271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5382D0A6-2DD0-4993-BB28-3B52D039D271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

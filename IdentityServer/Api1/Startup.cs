@@ -1,4 +1,5 @@
 using System;
+using Data.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,12 +23,12 @@ namespace Api1
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", options =>
                 {
-                    options.Authority = "https://localhost:44373";
+                    options.Authority = IdsConstants.Authority;
 
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateAudience = false,
-                        ClockSkew = TimeSpan.FromSeconds(5),
+                        ClockSkew = TimeSpan.FromSeconds(300),
                         RequireExpirationTime = true
                     };
                 });
@@ -37,7 +38,7 @@ namespace Api1
                 options.AddPolicy("scope1", policy =>
                 {
                     policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope","Sample");
+                    policy.RequireClaim("scope", "Sample");
                 });
             });
         }

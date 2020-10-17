@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Data.Shared;
 using IdentityModel.Client;
 using Newtonsoft.Json.Linq;
 
@@ -12,7 +13,7 @@ namespace ConsoleClient
         {
             // discovery endpoint
             var httpClient = new HttpClient();
-            var discovery = await httpClient.GetDiscoveryDocumentAsync("https://localhost:44373/");
+            var discovery = await httpClient.GetDiscoveryDocumentAsync(IdsConstants.Authority);
 
             if (discovery.IsError)
             {
@@ -25,8 +26,8 @@ namespace ConsoleClient
                 new ClientCredentialsTokenRequest
                 {
                     Address = discovery.TokenEndpoint,
-                    ClientId = "Sample_App",
-                    ClientSecret = "1q2w3e*",
+                    ClientId = IdsConstants.ClientId,
+                    ClientSecret = IdsConstants.ClientSecret,
                     Scope = "Sample"
                 });
 

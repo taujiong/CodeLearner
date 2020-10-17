@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -27,27 +25,28 @@ namespace MvcClient.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         public async Task<ActionResult> Index()
         {
-            // var accessToken =
-            //     await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
-            // var http = new HttpClient();
-            // http.SetBearerToken(accessToken);
-            // var apiResponse = await http.GetAsync("https://localhost:5002/identity");
-            // if (!apiResponse.IsSuccessStatusCode)
-            // {
-            //     if (apiResponse.StatusCode == HttpStatusCode.Unauthorized)
-            //     {
-            //         await RenewTokensAsync();
-            //         return RedirectToAction();
-            //     }
-            //
-            //     throw new Exception(apiResponse.ReasonPhrase);
-            // }
-            //
-            // var content = await apiResponse.Content.ReadAsStringAsync();
+            var accessToken =
+                await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            var http = new HttpClient();
+            http.SetBearerToken(accessToken);
+            var apiResponse = await http.GetAsync("https://localhost:5002/identity");
+            if (!apiResponse.IsSuccessStatusCode)
+            {
+                if (apiResponse.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    await RenewTokensAsync();
+                    return RedirectToAction();
+                }
 
-            return View("Index", "Hello");
+                throw new Exception(apiResponse.ReasonPhrase);
+            }
+
+            var content = await apiResponse.Content.ReadAsStringAsync();
+
+            return View("Index", content);
         }
 
         private async Task RenewTokensAsync()
@@ -121,7 +120,7 @@ namespace MvcClient.Controllers
                 currentAuthenticateResult.Principal, currentAuthenticateResult.Properties);
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize]
         public async Task<IActionResult> Privacy()
         {
             var accessToken =

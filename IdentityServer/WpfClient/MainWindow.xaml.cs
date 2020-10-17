@@ -1,6 +1,6 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Windows;
+using Data.Shared;
 using IdentityModel.Client;
 using Newtonsoft.Json.Linq;
 
@@ -11,13 +11,14 @@ namespace WpfClient
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string AccessToken { get; set; }
         private DiscoveryDocumentResponse _disco;
 
         public MainWindow()
         {
             InitializeComponent();
         }
+
+        private string AccessToken { get; set; }
 
         private async void RequestAccessToken_ButtonClick(object sender, RoutedEventArgs e)
         {
@@ -27,12 +28,12 @@ namespace WpfClient
 
             // request access token
             var client = new HttpClient();
-            _disco = await client.GetDiscoveryDocumentAsync("https://localhost:44373");
+            _disco = await client.GetDiscoveryDocumentAsync(IdsConstants.Authority);
             var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
             {
                 Address = _disco.TokenEndpoint,
-                ClientId = "Sample_App",
-                ClientSecret = "1q2w3e*",
+                ClientId = IdsConstants.ClientId,
+                ClientSecret = IdsConstants.ClientSecret,
                 UserName = userName,
                 Password = pwd,
                 Scope = "Sample openid profile"
