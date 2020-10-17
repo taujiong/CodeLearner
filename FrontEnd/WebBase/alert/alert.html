@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./site.css">
+    <link rel="stylesheet" href="./alert.css">
     <title>Sweet Alert</title>
 
 </head>
@@ -9,13 +9,17 @@
 <body>
     <button onclick="normal()">Normal Alert</button>
     <button onclick="sweet()">Sweet Alert</button>
-    <script src="./site.js"></script>
+    <script src="./alert.js"></script>
     <script>
         function normal() {
             alert("oops Anda tidak memiliki ijin");
         }
         function sweet() {
-            swal("Failed", "<p >用户名 taujiong 已存在.</p>< p > 邮箱 taujiong@outlook.com 已存在.</p >", "success")
+            swal({
+                title: "Failed",
+                text: "<p>用户名 taujiong 已存在.</p><p>邮箱 taujiong@outlook.com 已存在.</p >", html: true,
+                type: "success"
+            })
         }
     </script>
 </body>

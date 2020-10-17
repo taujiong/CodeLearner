@@ -1,5 +1,9 @@
+* {
+    max-height: 100%;
+}
+
 section {
-    background: url("./background.jpg") no-repeat;
+    background: url("../background.jpg") no-repeat;
     background-size: cover;
 }
 
