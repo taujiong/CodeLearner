@@ -8,6 +8,10 @@ video {
   object-fit: cover;
 }
 
+.video-container {
+  background: url('./https://traversymedia.com/downloads/cover.jpg') no-repeat center center/cover;
+}
+
 .video-container:after {
   content: '';
   height: 100%;
