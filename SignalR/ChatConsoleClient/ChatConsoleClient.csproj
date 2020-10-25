@@ -6,9 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="J3space\Landing\s.jpg" />
-    <None Remove="J3space\Landing\night-cut.mp4" />
-    <None Remove="J3space\Landing\background.jpg" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.9" />
   </ItemGroup>
 
 </Project>

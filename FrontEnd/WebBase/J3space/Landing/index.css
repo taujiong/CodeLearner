@@ -9,7 +9,13 @@ video {
 }
 
 .video-container {
-  background: url('./https://traversymedia.com/downloads/cover.jpg') no-repeat center center/cover;
+  background: url('./background.jpg') no-repeat center center/cover;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .video-container:after {
