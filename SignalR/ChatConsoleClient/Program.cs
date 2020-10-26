@@ -31,11 +31,7 @@ namespace ChatConsoleClient
                 var key = Console.ReadKey();
                 if (key.Key == ConsoleKey.S)
                 {
-                    await connection.SendAsync("SendMessage", "send method", "hello from send");
-                }
-                else if (key.Key == ConsoleKey.I)
-                {
-                    await connection.InvokeAsync("SendMessage", "invoke method", "hello from invoke");
+                    await connection.SendAsync("SendMessage", "console", "hello from console");
                 }
                 else
                 {
