@@ -24,6 +24,15 @@ namespace Game.Data
                 b.Property(c => c.Name)
                     .HasMaxLength(20);
             });
+
+            modelBuilder.Entity<GamePlayer>(b => { b.HasKey(gp => new {gp.GameId, gp.PlayerId}); });
+
+            modelBuilder.Entity<Resume>(b =>
+            {
+                b.HasOne(r => r.Player)
+                    .WithOne(p => p.Resume)
+                    .HasForeignKey<Resume>(x => x.PlayerId);
+            });
         }
     }
 }

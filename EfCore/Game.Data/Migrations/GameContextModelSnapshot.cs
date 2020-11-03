@@ -45,6 +45,38 @@ namespace Game.Data.Migrations
                 b.ToTable("Clubs");
             });
 
+            modelBuilder.Entity("Game.Domain.Game", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
+
+                b.Property<int>("Round")
+                    .HasColumnType("int");
+
+                b.Property<DateTimeOffset?>("StartTime")
+                    .HasColumnType("datetime(6)");
+
+                b.HasKey("Id");
+
+                b.ToTable("Game");
+            });
+
+            modelBuilder.Entity("Game.Domain.GamePlayer", b =>
+            {
+                b.Property<int>("GameId")
+                    .HasColumnType("int");
+
+                b.Property<int>("PlayerId")
+                    .HasColumnType("int");
+
+                b.HasKey("GameId", "PlayerId");
+
+                b.HasIndex("PlayerId");
+
+                b.ToTable("GamePlayer");
+            });
+
             modelBuilder.Entity("Game.Domain.League", b =>
             {
                 b.Property<int>("Id")
@@ -77,11 +109,34 @@ namespace Game.Data.Migrations
                 b.Property<string>("Name")
                     .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                b.Property<int>("ResumeId")
+                    .HasColumnType("int");
+
                 b.HasKey("Id");
 
                 b.HasIndex("ClubId");
 
                 b.ToTable("Players");
+            });
+
+            modelBuilder.Entity("Game.Domain.Resume", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int");
+
+                b.Property<string>("Description")
+                    .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                b.Property<int>("PlayerId")
+                    .HasColumnType("int");
+
+                b.HasKey("Id");
+
+                b.HasIndex("PlayerId")
+                    .IsUnique();
+
+                b.ToTable("Resume");
             });
 
             modelBuilder.Entity("Game.Domain.Club", b =>
@@ -91,11 +146,35 @@ namespace Game.Data.Migrations
                     .HasForeignKey("LeagueId");
             });
 
+            modelBuilder.Entity("Game.Domain.GamePlayer", b =>
+            {
+                b.HasOne("Game.Domain.Game", "Game")
+                    .WithMany("GamePlayers")
+                    .HasForeignKey("GameId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.HasOne("Game.Domain.Player", "Player")
+                    .WithMany("GamePlayers")
+                    .HasForeignKey("PlayerId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+            });
+
             modelBuilder.Entity("Game.Domain.Player", b =>
             {
                 b.HasOne("Game.Domain.Club", null)
                     .WithMany("Players")
                     .HasForeignKey("ClubId");
+            });
+
+            modelBuilder.Entity("Game.Domain.Resume", b =>
+            {
+                b.HasOne("Game.Domain.Player", "Player")
+                    .WithOne("Resume")
+                    .HasForeignKey("Game.Domain.Resume", "PlayerId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
             });
 #pragma warning restore 612, 618
         }
