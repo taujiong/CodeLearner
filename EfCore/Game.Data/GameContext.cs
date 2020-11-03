@@ -1,17 +1,28 @@
 ﻿using Game.Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Game.Data
 {
     public class GameContext : DbContext
     {
+        public static readonly ILoggerFactory ConsoleLoggerFactory =
+            LoggerFactory.Create(builder =>
+            {
+                // builder.AddFilter((category, level) =>
+                //     category == DbLoggerCategory.Database.Command.Name
+                //     && level == LogLevel.Information);
+            });
+
         public DbSet<League> Leagues { get; set; }
         public DbSet<Club> Clubs { get; set; }
         public DbSet<Player> Players { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("Server=localhost;Database=Game;Uid=root;Pwd=Pas5w0rd*");
+            optionsBuilder
+                .UseLoggerFactory(ConsoleLoggerFactory)
+                .UseMySql("Server=localhost;Database=Game;Uid=root;Pwd=Pas5w0rd*");
             base.OnConfiguring(optionsBuilder);
         }
 
