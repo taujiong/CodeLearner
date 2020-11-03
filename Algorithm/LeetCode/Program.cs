@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new T040().CombinationSum2(new[]{2,5,2,1,2},5).Count);
+            Console.WriteLine(new T941().ValidMountainArray(new[] {9, 8, 7, 6}));
         }
     }
 }
