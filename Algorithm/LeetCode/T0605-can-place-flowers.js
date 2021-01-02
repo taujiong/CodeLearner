@@ -1,8 +1,11 @@
 /**
  * https://leetcode-cn.com/problems/can-place-flowers/
  * 简单，贪心算法
+ * @param {number[]} flowerbed
+ * @param {number} n
+ * @return {boolean}
  */
-function canPlaceFlowers(flowerbed: number[], n: number): boolean {
+var canPlaceFlowers = function (flowerbed, n) {
   for (let i = 0; i < flowerbed.length && n > 0;) {
     if (flowerbed[i] == 1) {
       i += 2;
@@ -16,7 +19,12 @@ function canPlaceFlowers(flowerbed: number[], n: number): boolean {
   return n <= 0;
 };
 
-function officialSolution(flowerbed: number[], n: number): boolean {
+/**
+ * @param {number[]} flowerbed
+ * @param {number} n
+ * @return {boolean}
+ */
+function officialSolution(flowerbed, n) {
   let prev = -1;
   let len = flowerbed.length;
 

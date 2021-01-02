@@ -1,11 +1,14 @@
-import { ListNode } from "./TypeDefinition";
+import { ListNode } from "./TypeDefinition.js";
 
 /**
  * https://leetcode-cn.com/problems/merge-two-sorted-lists/
  * 简单，链表
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
  */
-function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-  let head: ListNode = new ListNode();
+var mergeTwoLists = function (l1, l2) {
+  let head = new ListNode(0);
   let currentNode = head;
 
   while (l1 && l2) {
