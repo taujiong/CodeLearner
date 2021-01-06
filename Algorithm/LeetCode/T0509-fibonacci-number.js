@@ -9,7 +9,8 @@ var fib = function (n) {
     return n;
   }
 
-  let a = 0, b = 1;
+  let a = 0;
+  let b = 1;
 
   for (let i = 1; i < n; i++) {
     [a, b] = [b, a + b];
@@ -29,13 +30,19 @@ var officialSolution = function (n) {
   if (n < 2) {
     return n;
   }
-  const q = [[1, 1], [1, 0]];
+  const q = [
+    [1, 1],
+    [1, 0],
+  ];
   const res = pow(q, n - 1);
   return res[0][0];
 };
 
 const pow = (a, n) => {
-  let ret = [[1, 0], [0, 1]];
+  let ret = [
+    [1, 0],
+    [0, 1],
+  ];
   while (n > 0) {
     if ((n & 1) === 1) {
       ret = multiply(ret, a);
@@ -44,7 +51,7 @@ const pow = (a, n) => {
     a = multiply(a, a);
   }
   return ret;
-}
+};
 
 const multiply = (a, b) => {
   const c = new Array(2).fill(0).map(() => new Array(2).fill(0));
@@ -54,4 +61,4 @@ const multiply = (a, b) => {
     }
   }
   return c;
-}
+};

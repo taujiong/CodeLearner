@@ -7,7 +7,8 @@
  * @return {number}
  */
 var strStr = function (haystack, needle) {
-  const l = haystack.length, s = needle.length;
+  const l = haystack.length;
+  const s = needle.length;
 
   if (s === 0) {
     return 0;

@@ -10,7 +10,8 @@ import { ListNode } from "./TypeDefinition.js";
 var removeNthFromEnd = function (head, n) {
   const dummyNode = new ListNode(0);
   dummyNode.next = head;
-  let fast = dummyNode, slow = dummyNode;
+  let fast = dummyNode;
+  let slow = dummyNode;
 
   while (n--) {
     fast = fast.next;

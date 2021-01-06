@@ -6,7 +6,7 @@
  * @return {boolean}
  */
 var canPlaceFlowers = function (flowerbed, n) {
-  for (let i = 0; i < flowerbed.length && n > 0;) {
+  for (let i = 0; i < flowerbed.length && n > 0; ) {
     if (flowerbed[i] == 1) {
       i += 2;
     } else if (i == flowerbed.length - 1 || flowerbed[i + 1] == 0) {
