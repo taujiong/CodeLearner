@@ -1,4 +1,4 @@
-import { Employee } from "./TypeDefinition.js";
+import { Employee } from "../TypeDefinition.js";
 
 /**
  * https://leetcode-cn.com/problems/employee-importance/

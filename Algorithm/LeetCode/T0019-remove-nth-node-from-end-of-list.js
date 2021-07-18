@@ -1,4 +1,4 @@
-import { ListNode } from "./TypeDefinition.js";
+import { ListNode } from "../TypeDefinition.js";
 
 /**
  * https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
