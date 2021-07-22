@@ -1,4 +1,4 @@
-import { ListNode } from "../TypeDefinition.js";
+import { ListNode } from '../TypeDefinition.js';
 
 /**
  * @param {ListNode} pHead
