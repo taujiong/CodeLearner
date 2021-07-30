@@ -22,18 +22,10 @@ MyQueue.prototype.push = function (x) {
  * @return {number}
  */
 MyQueue.prototype.pop = function () {
-  var length = this.inStack.length;
-  if (length === 0) {
-    return this.outStack.pop();
-  } else if (length === 1) {
-    return this.inStack.pop();
-  } else {
-    while (length > 1) {
-      this.outStack.push(this.inStack.pop());
-      length--;
-    }
-    return this.inStack.pop();
+  if (!this.outStack.length) {
+    this.in2out();
   }
+  return this.outStack.pop();
 };
 
 /**
@@ -41,18 +33,10 @@ MyQueue.prototype.pop = function () {
  * @return {number}
  */
 MyQueue.prototype.peek = function () {
-  var length = this.inStack.length;
-  if (length === 0) {
-    return this.outStack[-1];
-  } else if (length === 1) {
-    return this.inStack[0];
-  } else {
-    while (length > 1) {
-      this.outStack.push(this.inStack.pop());
-      length--;
-    }
-    return this.inStack[0];
+  if (!this.outStack.length) {
+    this.in2out();
   }
+  return this.outStack[this.outStack.length - 1];
 };
 
 /**
@@ -61,6 +45,12 @@ MyQueue.prototype.peek = function () {
  */
 MyQueue.prototype.empty = function () {
   return this.inStack.length === 0 && this.outStack.length === 0;
+};
+
+MyQueue.prototype.in2out = function () {
+  while (this.inStack.length) {
+    this.outStack.push(this.inStack.pop());
+  }
 };
 
 /**
