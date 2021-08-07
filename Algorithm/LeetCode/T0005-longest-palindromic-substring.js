@@ -26,6 +26,10 @@ var longestPalindrome = function (s) {
   return res;
 };
 
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindromeWithDp = function (s) {
   if (!s || s.length === 0) return '';
   let res = s[0];

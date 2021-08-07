@@ -9,6 +9,19 @@ export class ListNode {
   }
 }
 
+export class Node {
+  /**
+   * @param {number} val
+   * @param {Node | null} next
+   * @param {Node | null} random
+   */
+  constructor(val = 0, next = null, random = null) {
+    this.val = val;
+    this.next = next;
+    this.random = random;
+  }
+}
+
 export class TreeNode {
   /**
    * @param {number} val
