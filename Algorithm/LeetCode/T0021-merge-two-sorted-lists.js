@@ -1,4 +1,4 @@
-import { ListNode } from "../TypeDefinition.js";
+import { ListNode } from '../TypeDefinition.js';
 
 /**
  * https://leetcode-cn.com/problems/merge-two-sorted-lists/
@@ -8,8 +8,8 @@ import { ListNode } from "../TypeDefinition.js";
  * @return {ListNode}
  */
 var mergeTwoLists = function (l1, l2) {
-  let head = new ListNode(0);
-  let currentNode = head;
+  let head = new ListNode(0),
+    currentNode = head;
 
   while (l1 && l2) {
     if (l1.val >= l2.val) {
